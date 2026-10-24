@@ -2,7 +2,7 @@
 
 从 **2026-10-20** 起，持续汇总 [SuperMimic](https://supermimic.github.io/)（arXiv:2610.28480）的开源复现与改造。
 
-> 最近核查：2026-10-25 06:45（UTC+8） · 已确认完整训练实现：**38 个仓库**  
+> 最近核查：2026-10-25 06:50（UTC+8） · 已确认完整训练实现：**38 个仓库**  
 > Star 为本次核查快照，每 3 小时随增量检索刷新。
 
 ## 收录口径
@@ -16,7 +16,7 @@
 - **论文主任务／通用动作跟踪**：G1 平地全身跟踪是主流；部分项目扩展到 BONES-SEED、多卡、完整评测和分布外动作。
 - **地形与感知**：InstinctMJ 分支实现深度视觉跑酷，另有 Go2 平地／障碍／复杂地形追逐闪避、G1 高程图台阶、HoloMotion 多后端跟踪；暂未确认基于 BFM-Zero 的完整改造。
 - **跨本体**：G1、Go2、H2、A3、X2 Ultra、T2、E1、Oli、Q1、天工 3.0 等。
-- **新任务**：多机器人共享世界模型、五点稀疏跟踪、追逐闪避、滑板与手物交互、高动态动作、Apple M5 训练等。
+- **新任务**：多机器人共享世界模型、五点稀疏跟踪、追逐闪避、滑板与 HOI／手物交互、高动态动作、Apple M5 训练等；社区展示与开源训练状态见[社区新任务时间线](COMMUNITY_TASKS.md)。
 
 ## 已确认包含训练实现
 
@@ -28,7 +28,7 @@
 | [zita-ch/supermimic_vibed](https://github.com/zita-ch/supermimic_vibed) | 474 | 早期高影响力独立复现，完整 WM＋BPTT＋critic | G1，40 条 LAFAN1 平地全身跟踪 | Isaac Lab 3 kit-less、Newton／MuJoCo Warp |
 | [CuboiLeo/SuperMimic-Reproduced](https://github.com/CuboiLeo/SuperMimic-Reproduced) | 200 | 从零实现数据、可微 FK、WM、想象训练、分布式与评测 | G1，LAFAN1＋BONES-SEED 全身跟踪 | mjlab／MuJoCo Warp |
 | [Motphys/Uni-SuperMimic](https://github.com/Motphys/Uni-SuperMimic) | 110 | UniLab 工程化复现，支持三种仿真后端和 ROCm 路径 | G1，40 条 LAFAN1 全身跟踪 | UniLab；参考 supermimic_vibed |
-| [lzyang2000/morphmimic](https://github.com/lzyang2000/morphmimic) | 40 | 形态条件化 WM／策略共享，支持五点稀疏目标与部署 | G1／X2 Ultra／T2，BONES-SEED，多机器人跟踪 | 独立实现；mjlab |
+| [lzyang2000/morphmimic](https://github.com/lzyang2000/morphmimic) | 42 | 形态条件化 WM／策略共享，支持五点稀疏目标与部署 | G1／X2 Ultra／T2，BONES-SEED，多机器人跟踪 | 独立实现；mjlab |
 | [btx0424/rethinking-supermimic](https://github.com/btx0424/rethinking-supermimic) | 20 | 重思网络与训练实现，含多种 actor 配置和梯度检查 | G1，40 条 LAFAN1 跟踪 | mjlab |
 | [YanYuan98/Supermimic_mod](https://github.com/YanYuan98/Supermimic_mod) | 8 | 完整训练评测，并提供与 RGMT 的效果对比 | G1，40 条 LAFAN1 跟踪 | mjlab／MuJoCo Warp |
 | [Shimingyi/allmimic](https://github.com/Shimingyi/allmimic) | 6 | 强调可行性过滤及内容／演员／随机三类 held-out 划分 | G1，LAFAN1＋BONES-SEED 跟踪与泛化评测 | mjlab；参考 supermimic_vibe |
@@ -79,11 +79,13 @@
 
 ## 社区平台检索记录
 
-- **GitHub**：组合检索 `supermimic`、`super mimic`、arXiv 编号及底座关键词，覆盖仓库名称、简介、README、文档和代码；后续增量继续检查分支说明文件。
-- **Bilibili**：检索到论文介绍、4090 复现、深度图地形、Oli、E1、Mac Studio、RGMT、HOI、追逐闪避等视频；只把能回溯到公开仓库且通过训练代码核查的项目并入主表。公开搜索接口返回 412 时改用公开网页结果，不绕过反爬。
+社区内容的发布时间、任务类型和代码状态单独维护在 **[COMMUNITY_TASKS.md](COMMUNITY_TASKS.md)**。
+
+- **GitHub**：组合检索 `supermimic`、`super mimic`、arXiv 编号及底座关键词，覆盖仓库名称、简介、README、文档和代码；对候选仓库显式枚举分支，检查 `supermimic` 等非默认分支的说明文件与训练实现。
+- **Bilibili**：已按时间整理深度图地形、HOI 搬箱、Oli、Mac Studio、闪身步和高难动作等任务；只把能回溯到公开仓库且通过训练代码核查的项目并入主表。公开搜索接口返回 412 时改用公开网页结果，不绕过反爬。
 - **小红书**：本轮公开网页搜索未返回可核验结果，内置搜索页显示“登录后查看搜索结果”。因此当前没有来自小红书且已独立验证的新仓库；后续任务会重试并记录访问限制。
-- 平台评论中的 homepage／GitHub 仅作为候选线索，不作为“训练完整”的证据。
+- 平台简介及公开可访问评论中的 homepage／GitHub 仅作为候选线索，不作为“训练完整”的证据；HOI、地形、跑酷、各种 humanoid task 和其他机器人任务均纳入检索范围。
 
 ## 更新约定
 
-每 3 小时执行一次增量检索：去重候选、检查默认分支及相关分支、复核训练链路、提炼任务和上游底座，并刷新所有主表仓库 Star。新增或修订记录时更新“最近核查”时间；仅有 Star 变化也提交更新，完全无变化则不制造空提交。
+每 3 小时执行一次增量检索：读取旧版主表与社区时间线，去重候选，显式枚举候选仓库的默认及相关非默认分支，复核训练链路，提炼任务和上游底座，并刷新所有主表仓库 Star。新增仓库、HOI 等新任务或社区条目时同步更新对应文档和“最近核查”时间；仅有 Star 变化也提交更新，完全无变化则不制造空提交。
