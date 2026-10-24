@@ -2,7 +2,7 @@
 
 从 **2026-10-20** 起，持续汇总 [SuperMimic](https://supermimic.github.io/)（arXiv:2610.28480）的开源复现与改造。
 
-> 最近核查：2026-10-25 06:40（UTC+8） · 已确认完整训练实现：**37 个仓库**  
+> 最近核查：2026-10-25 06:45（UTC+8） · 已确认完整训练实现：**38 个仓库**  
 > Star 为本次核查快照，每 3 小时随增量检索刷新。
 
 ## 收录口径
@@ -14,7 +14,7 @@
 ## 总览
 
 - **论文主任务／通用动作跟踪**：G1 平地全身跟踪是主流；部分项目扩展到 BONES-SEED、多卡、完整评测和分布外动作。
-- **地形与感知**：Go2 平地／障碍／复杂地形追逐闪避、G1 高程图台阶、HoloMotion 多后端跟踪；暂未确认基于 InstinctMJ 或 BFM-Zero 的完整改造。
+- **地形与感知**：InstinctMJ 分支实现深度视觉跑酷，另有 Go2 平地／障碍／复杂地形追逐闪避、G1 高程图台阶、HoloMotion 多后端跟踪；暂未确认基于 BFM-Zero 的完整改造。
 - **跨本体**：G1、Go2、H2、A3、X2 Ultra、T2、E1、Oli、Q1、天工 3.0 等。
 - **新任务**：多机器人共享世界模型、五点稀疏跟踪、追逐闪避、滑板与手物交互、高动态动作、Apple M5 训练等。
 
@@ -48,6 +48,7 @@
 
 | 仓库 | ⭐ | 精简总结 | 主要训练任务 | 底座／来源 |
 |---|---:|---|---|---|
+| [project-instinct/InstinctMJ（supermimic 分支）](https://github.com/project-instinct/InstinctMJ/tree/supermimic) | 267 | 将机器人状态与深度编码视觉潜变量共同纳入 WM，在想象中训练原深度策略，无 PPO | G1 深度视觉地形跑酷：翻滚、跪膝爬 50 cm 台阶、跳坐、滚翻越过障碍 | InstinctMJ／InstinctLab、mjlab；适配 zita-ch |
 | [Zhengtianjin/go2-supermimic](https://github.com/Zhengtianjin/go2-supermimic) | 19 | 将 WM＋想象 rollout 用于追逐与闪避，含 LiDAR／高程输入 | Go2 平地、障碍、楼梯／坡面／粗糙地形 | mjlab；参考 go2_rl_gym |
 | [JackMin7/supermimic_whole_body_tracking](https://github.com/JackMin7/supermimic_whole_body_tracking) | 19 | 同任务 MBRL 与 PPO 对照，附逐 10 分钟训练数据 | G1 静态站立／全身控制 | BeyondMimic／SuperMimic |
 | [panhainan2020/SuperMimic-MuJoCo](https://github.com/panhainan2020/SuperMimic-MuJoCo) | 11 | 脱离 Isaac Lab，支持原生 MuJoCo／MJLab 与两种 G1 模型 | G1，LAFAN1＋100STYLE 分布外评测 | zita-ch／MJLab |
