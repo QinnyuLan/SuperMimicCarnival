@@ -2,7 +2,7 @@
 
 从 **2026-10-20** 起，持续汇总 [SuperMimic](https://supermimic.github.io/)（arXiv:2610.28480）的开源复现与改造。
 
-> 最近核查：2026-10-25 08:57（UTC+8） · 已确认完整训练实现：**39 个仓库**  
+> 最近核查：2026-10-25 11:40（UTC+8） · 已确认完整训练实现：**39 个仓库**  
 > Star 为本次核查快照，每 3 小时随增量检索刷新。
 
 ## 收录口径
@@ -24,11 +24,11 @@
 
 | 仓库 | ⭐ | 精简总结 | 主要训练任务 | 底座／来源 |
 |---|---:|---|---|---|
-| [HorizonRobotics/HoloMotion](https://github.com/HorizonRobotics/HoloMotion) | 732 | HoloMotion 内新增完整 SuperMimic 算法、配置、训练与评测文档 | 人形全身动作跟踪，MuJoCo Warp／Isaac PhysX | HoloMotion |
-| [zita-ch/supermimic_vibed](https://github.com/zita-ch/supermimic_vibed) | 475 | 早期高影响力独立复现，完整 WM＋BPTT＋critic | G1，40 条 LAFAN1 平地全身跟踪 | Isaac Lab 3 kit-less、Newton／MuJoCo Warp |
-| [CuboiLeo/SuperMimic-Reproduced](https://github.com/CuboiLeo/SuperMimic-Reproduced) | 200 | 从零实现数据、可微 FK、WM、想象训练、分布式与评测 | G1，LAFAN1＋BONES-SEED 全身跟踪 | mjlab／MuJoCo Warp |
-| [Motphys/Uni-SuperMimic](https://github.com/Motphys/Uni-SuperMimic) | 110 | UniLab 工程化复现，支持三种仿真后端和 ROCm 路径 | G1，40 条 LAFAN1 全身跟踪 | UniLab；参考 supermimic_vibed |
-| [lzyang2000/morphmimic](https://github.com/lzyang2000/morphmimic) | 46 | 形态条件化 WM／策略共享，支持五点稀疏目标与部署 | G1／X2 Ultra／T2，BONES-SEED，多机器人跟踪 | 独立实现；mjlab |
+| [HorizonRobotics/HoloMotion](https://github.com/HorizonRobotics/HoloMotion) | 733 | HoloMotion 内新增完整 SuperMimic 算法、配置、训练与评测文档 | 人形全身动作跟踪，MuJoCo Warp／Isaac PhysX | HoloMotion |
+| [zita-ch/supermimic_vibed](https://github.com/zita-ch/supermimic_vibed) | 477 | 早期高影响力独立复现，完整 WM＋BPTT＋critic | G1，40 条 LAFAN1 平地全身跟踪 | Isaac Lab 3 kit-less、Newton／MuJoCo Warp |
+| [CuboiLeo/SuperMimic-Reproduced](https://github.com/CuboiLeo/SuperMimic-Reproduced) | 202 | 从零实现数据、可微 FK、WM、想象训练、分布式与评测 | G1，LAFAN1＋BONES-SEED 全身跟踪 | mjlab／MuJoCo Warp |
+| [Motphys/Uni-SuperMimic](https://github.com/Motphys/Uni-SuperMimic) | 113 | UniLab 工程化复现，支持三种仿真后端和 ROCm 路径 | G1，40 条 LAFAN1 全身跟踪 | UniLab；参考 supermimic_vibed |
+| [lzyang2000/morphmimic](https://github.com/lzyang2000/morphmimic) | 53 | 形态条件化 WM／策略共享，支持五点稀疏目标与部署 | G1／X2 Ultra／T2，BONES-SEED，多机器人跟踪 | 独立实现；mjlab |
 | [btx0424/rethinking-supermimic](https://github.com/btx0424/rethinking-supermimic) | 20 | 重思网络与训练实现，含多种 actor 配置和梯度检查 | G1，40 条 LAFAN1 跟踪 | mjlab |
 | [YanYuan98/Supermimic_mod](https://github.com/YanYuan98/Supermimic_mod) | 8 | 完整训练评测，并提供与 RGMT 的效果对比 | G1，40 条 LAFAN1 跟踪 | mjlab／MuJoCo Warp |
 | [Shimingyi/allmimic](https://github.com/Shimingyi/allmimic) | 6 | 强调可行性过滤及内容／演员／随机三类 held-out 划分 | G1，LAFAN1＋BONES-SEED 跟踪与泛化评测 | mjlab；参考 supermimic_vibe |
@@ -49,11 +49,11 @@
 | 仓库 | ⭐ | 精简总结 | 主要训练任务 | 底座／来源 |
 |---|---:|---|---|---|
 | [project-instinct/InstinctMJ（supermimic 分支）](https://github.com/project-instinct/InstinctMJ/tree/supermimic) | 267 | 将机器人状态与深度编码视觉潜变量共同纳入 WM，在想象中训练原深度策略，无 PPO | G1 深度视觉地形跑酷：翻滚、跪膝爬 50 cm 台阶、跳坐、滚翻越过障碍 | InstinctMJ／InstinctLab、mjlab；适配 zita-ch |
-| [Zhengtianjin/go2-supermimic](https://github.com/Zhengtianjin/go2-supermimic) | 19 | 将 WM＋想象 rollout 用于追逐与闪避，含 LiDAR／高程输入 | Go2 平地、障碍、楼梯／坡面／粗糙地形 | mjlab；参考 go2_rl_gym |
+| [Zhengtianjin/go2-supermimic](https://github.com/Zhengtianjin/go2-supermimic) | 20 | 将 WM＋想象 rollout 用于追逐与闪避，含 LiDAR／高程输入 | Go2 平地、障碍、楼梯／坡面／粗糙地形 | mjlab；参考 go2_rl_gym |
 | [JackMin7/supermimic_whole_body_tracking](https://github.com/JackMin7/supermimic_whole_body_tracking) | 19 | 同任务 MBRL 与 PPO 对照，附逐 10 分钟训练数据 | G1 静态站立／全身控制 | BeyondMimic／SuperMimic |
 | [panhainan2020/SuperMimic-MuJoCo](https://github.com/panhainan2020/SuperMimic-MuJoCo) | 11 | 脱离 Isaac Lab，支持原生 MuJoCo／MJLab 与两种 G1 模型 | G1，LAFAN1＋100STYLE 分布外评测 | zita-ch／MJLab |
 | [Renforce-Dynamics/trackerlab-supermimic](https://github.com/Renforce-Dynamics/trackerlab-supermimic) | 8 | TrackerLab 数据到训练、评测、导出全链路 | G1 LAFAN1；Go2 trot 跟踪 | TrackerLab、IsaacLab／PhysX、zita-ch |
-| [Baojch/SuperMimic_Dyn](https://github.com/Baojch/SuperMimic_Dyn) | 7 | 面向高动态与低姿态动作，保留完整可复现训练记录 | G1 空翻、爬行、跌倒起身及通用跟踪 | CuboiLeo／mjlab |
+| [Baojch/SuperMimic_Dyn](https://github.com/Baojch/SuperMimic_Dyn) | 8 | 面向高动态与低姿态动作，保留完整可复现训练记录 | G1 空翻、爬行、跌倒起身及通用跟踪 | CuboiLeo／mjlab |
 | [tianshuwu/supermimic-retargeted](https://github.com/tianshuwu/supermimic-retargeted) | 6 | 多本体动作重定向与训练，支持 A3／X2／G1 | 多本体 LAFAN1／BONES 跟踪 | CuboiLeo／zita-ch |
 | [wenconggan/SuperMimic_e1](https://github.com/wenconggan/SuperMimic_e1) | 4 | E1 21DoF 适配，训练后可在原生 MuJoCo sim2sim | DroidUp E1，40 条 LAFAN1 跟踪 | Isaac Lab 3／Newton／MuJoCo Warp |
 | [OMEGA-i/SuperMimicKit](https://github.com/OMEGA-i/SuperMimicKit) | 3 | 多本体工具包，含重定向、训练、ONNX 和 WebGPU 演示 | G1／H2／A3，LaFAN 跟踪 | PyTorch／MuJoCo Warp；参考 zita-ch |
@@ -84,8 +84,8 @@
 社区内容的发布时间、任务类型和代码状态单独维护在 **[COMMUNITY_TASKS.md](COMMUNITY_TASKS.md)**。
 
 - **GitHub**：组合检索 `supermimic`、`super mimic`、arXiv 编号及底座关键词，覆盖仓库名称、简介、README、文档和代码；对候选仓库显式枚举分支，检查 `supermimic` 等非默认分支的说明文件与训练实现。
-- **Bilibili**：已利用登录态网页按时间整理深度图地形、HOI 搬箱、E1、灵龙 2.0、RGMT、Oli、Mac Studio、闪身步和高难动作等任务，并检查 `superminic` 拼写变体；只把能回溯到公开仓库且通过训练代码核查的项目并入主表。公开抓取接口返回 412 时改用已登录页面读取，不绕过反爬。
-- **小红书**：已利用用户登录态检索，通过页面状态／DOM 提取正文和时间，并核查重点笔记的公开可访问评论；本轮新增 15 条社区记录，M5 等条目由作者评论或正文定位到已核实仓库。文档只保存不含访问令牌的规范链接；登录失效时记录限制并留待下轮重试。
+- **Bilibili**：已利用登录态网页按时间整理深度图地形、HOI 搬箱、E1、灵龙 2.0、RGMT、Oli、Mac Studio、闪身步和高难动作等任务，并检查 `superminic` 拼写变体；只把能回溯到公开仓库且通过训练代码核查的项目并入主表。公开抓取接口返回 412 时改用已登录页面读取，不绕过反爬。2026-10-25 11:40 轮自动化会话的内置浏览器控制工具不可用，改用公开网页结果，未见 10-24 22:00 之后的新可核验条目；登录态检索留待下轮重试。
+- **小红书**：已利用用户登录态检索，通过页面状态／DOM 提取正文和时间，并核查重点笔记的公开可访问评论；本轮新增 15 条社区记录，M5 等条目由作者评论或正文定位到已核实仓库。文档只保存不含访问令牌的规范链接；登录失效时记录限制并留待下轮重试。2026-10-25 11:40 轮内置浏览器控制工具不可用，公开网页无新条目，既有条目保持不变。
 - 平台简介及公开可访问评论中的 homepage／GitHub 仅作为候选线索，不作为“训练完整”的证据；HOI、地形、跑酷、各种 humanoid task 和其他机器人任务均纳入检索范围。
 
 ## 更新约定
