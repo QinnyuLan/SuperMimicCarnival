@@ -1,0 +1,7 @@
+.cache/
+.secrets/
+tools/bin/
+.ghmcp_session
+automation-browser-diagnostic.jsonl
+__pycache__/
+*.pyc
