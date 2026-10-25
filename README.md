@@ -2,7 +2,7 @@
 
 从 **2026-10-20** 起，持续汇总 [SuperMimic](https://supermimic.github.io/)（arXiv:2610.28480）的开源复现与改造。
 
-> 最近核查：2026-10-26 05:45（UTC+8） · 已确认完整训练实现：**40 个仓库**  
+> 最近核查：2026-10-26 05:50（UTC+8） · 已确认完整训练实现：**42 个仓库**  
 > Star 为本次核查快照，每 3 小时随增量检索刷新。
 
 ## 收录口径
@@ -43,6 +43,8 @@
 | [samindaa/supermimic_mjlab](https://github.com/samindaa/supermimic_mjlab) | 1 | 从 Isaac Lab 版迁至 mjlab，含同迭代对照 | G1，40 条 LAFAN1 跟踪 | supermimic_vibed／mjlab |
 | [enffft/supermimic](https://github.com/enffft/supermimic) | 0 | 保留完整 WM／BPTT／数据管线，增加 Q1 训练文档 | G1／Q1，LAFAN1 跟踪 | CuboiLeo/SuperMimic-Reproduced |
 | [tianny0078/supermimic-repro](https://github.com/tianny0078/supermimic-repro) | 0 | 完整复现代码、Slurm 入口和调研记录 | G1，LAFAN1／BONES-SEED | 综合 CuboiLeo、zita-ch 等实现 |
+| [Go-Youngster/supermimic-reproduce](https://github.com/Go-Youngster/supermimic-reproduce) | 0 | 论文从零复现：可微 WM＋BPTT＋critic，含 PPO-Sim／PPO-WM 基线、消融与 A100 训练记录 | G1（29 DoF），40 条 LAFAN1 全身跟踪 | 论文从零实现；mjlab／MuJoCo Warp |
+| [CesarLiu/smimic（UniSuperMimic）](https://github.com/CesarLiu/smimic) | 0 | UniLab 下游独立复现，mjwarp／MuJoCo／Motrix 三后端、Hydra 配置与 Hugging Face 数据管线 | G1，40 条 LAFAN1 全身跟踪 | UniLab；参考 supermimic_vibed |
 
 ### B. 新本体、地形、感知与新任务
 
@@ -79,17 +81,15 @@
 | [yagami-light7/SuperMimic-codex](https://github.com/yagami-light7/SuperMimic-codex) | 当前为 M0 环境冒烟，README 明确等待后续训练实现。 |
 | [zzhanYoung/supermimic-lite](https://github.com/zzhanYoung/supermimic-lite) | 当前内容主要是 mjlab 上游框架，未核实到 SuperMimic WM 训练闭环。 |
 | [Tianao-Zhang/supermimic_dualhand](https://github.com/Tianao-Zhang/supermimic_dualhand) | 仓库当前为空（GitHub 返回 empty repository），无可核查的训练代码；下轮复查。 |
-| [Go-Youngster/supermimic-reproduce](https://github.com/Go-Youngster/supermimic-reproduce) | 仓库当前为空（无法解析默认分支），无可核查的训练代码；下轮复查。 |
 | [yangkunpeng-coder/supermimic_reproduce](https://github.com/yangkunpeng-coder/supermimic_reproduce) | 仓库当前仅有 LICENSE，无任何训练代码；下轮复查。 |
-| [CesarLiu/smimic](https://github.com/CesarLiu/smimic) | 仓库当前为空（无法解析默认分支），无可核查的训练代码；下轮复查。 |
 
 ## 社区平台检索记录
 
 社区内容的发布时间、任务类型和代码状态单独维护在 **[COMMUNITY_TASKS.md](COMMUNITY_TASKS.md)**。
 
 - **GitHub**：组合检索 `supermimic`、`super mimic`、arXiv 编号及底座关键词，覆盖仓库名称、简介、README、文档和代码；对候选仓库显式枚举分支，检查 `supermimic` 等非默认分支的说明文件与训练实现。
-- **Bilibili**：2026-10-25 15:35 轮起改用 `community_collect.py` 经公开 HTTP API 采集（检索 SuperMimic／super mimic／superminic，按发布时间前 3 页，含候选详情与公开评论，评论状态非 ok 不声称已核查）。15:35 轮实时采集成功（28 条候选、16 条新条目），Motphys 官方“单卡 40 分钟速通 LAFAN”视频经简介直链 Uni-SuperMimic 核实并入时间线；17:45 轮实时采集成功（29 条候选、1 条新条目），SuperMimic 2D 复现视频（BV1DQH56JEqi）经简介与作者评论直链 FlatWorld，静态核查 `supermimic2d` 训练闭环后收录主表；20:45 轮实时采集成功（29 条候选、0 条新条目，无缓存依赖），时间线无变化；23:45 轮实时采集成功（30 条候选、1 条新条目：感知行走 1 小时出炉，BV1NPHL6GEat，作者称在 zita-ch 复现库上经 Codex 修改、无 locomotion／style reward，未给仓库，标“任务展示”）；2026-10-26 02:45 轮实时采集成功（31 条候选、3 条新条目：Day 54 学习日志、unisupermimic 复现展示、论文方法讲解各 1 条，均未给仓库，标“任务展示”）；05:45 轮实时采集成功（34 条候选、1 条新条目：5070Ti 跑通 mjlab 复现 12000 轮，BV1U5nS6zETw，未指明仓库，标“任务展示”）。此前登录态网页轮次已整理深度图地形、HOI 搬箱、E1、灵龙 2.0、RGMT、Oli、Mac Studio、闪身步和高难动作等任务；只把能回溯到公开仓库且通过训练代码核查的项目并入主表，不绕过反爬。
-- **小红书**：已利用用户登录态检索，通过页面状态／DOM 提取正文和时间，并核查重点笔记的公开可访问评论；已有 15 条社区记录，M5 等条目由作者评论或正文定位到已核实仓库。2026-10-25 15:35 起连续各轮（含 2026-10-26 05:45）脚本采集状态均为 needs_auth（本机 `.secrets/xiaohongshu_cookie.txt` 缺失），均未新增小红书条目，既有的 15 条全部保留；需更新本机 Cookie 文件后下轮重试，不绕过登录与访问控制。文档只保存不含访问令牌的规范链接。
+- **Bilibili**：2026-10-25 15:35 轮起改用 `community_collect.py` 经公开 HTTP API 采集（检索 SuperMimic／super mimic／superminic，按发布时间前 3 页，含候选详情与公开评论，评论状态非 ok 不声称已核查）。15:35 轮实时采集成功（28 条候选、16 条新条目），Motphys 官方“单卡 40 分钟速通 LAFAN”视频经简介直链 Uni-SuperMimic 核实并入时间线；17:45 轮实时采集成功（29 条候选、1 条新条目），SuperMimic 2D 复现视频（BV1DQH56JEqi）经简介与作者评论直链 FlatWorld，静态核查 `supermimic2d` 训练闭环后收录主表；20:45 轮实时采集成功（29 条候选、0 条新条目，无缓存依赖），时间线无变化；23:45 轮实时采集成功（30 条候选、1 条新条目：感知行走 1 小时出炉，BV1NPHL6GEat，作者称在 zita-ch 复现库上经 Codex 修改、无 locomotion／style reward，未给仓库，标“任务展示”）；2026-10-26 02:45 轮实时采集成功（31 条候选、3 条新条目：Day 54 学习日志、unisupermimic 复现展示、论文方法讲解各 1 条，均未给仓库，标“任务展示”）；05:45 轮实时采集成功（34 条候选、1 条新条目：5070Ti 跑通 mjlab 复现 12000 轮，BV1U5nS6zETw，未指明仓库，标“任务展示”）；05:50 轮实时采集（cache_hits=0）但覆盖面收窄：仅返回 14 条候选且全部为 10-22／10-23 早期内容、0 条新条目，时间线无变化，下轮复核覆盖面。此前登录态网页轮次已整理深度图地形、HOI 搬箱、E1、灵龙 2.0、RGMT、Oli、Mac Studio、闪身步和高难动作等任务；只把能回溯到公开仓库且通过训练代码核查的项目并入主表，不绕过反爬。
+- **小红书**：已利用用户登录态检索，通过页面状态／DOM 提取正文和时间，并核查重点笔记的公开可访问评论；已有 15 条社区记录，M5 等条目由作者评论或正文定位到已核实仓库。2026-10-25 15:35 起连续各轮（含 2026-10-26 05:50）脚本采集状态均为 needs_auth（本机 `.secrets/xiaohongshu_cookie.txt` 缺失），均未新增小红书条目，既有的 15 条全部保留；需更新本机 Cookie 文件后下轮重试，不绕过登录与访问控制。文档只保存不含访问令牌的规范链接。
 - 平台简介及公开可访问评论中的 homepage／GitHub 仅作为候选线索，不作为“训练完整”的证据；HOI、地形、跑酷、各种 humanoid task 和其他机器人任务均纳入检索范围。
 
 ## 更新约定
