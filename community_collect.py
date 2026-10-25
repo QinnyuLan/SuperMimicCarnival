@@ -136,6 +136,7 @@ class BilibiliClient:
         self.jar = http.cookiejar.CookieJar()
         self.opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(self.jar))
         self.mixin_key = None
+        self.cache_hits = []
 
     def request(self, url, use_cache=False):
         request = urllib.request.Request(
@@ -159,6 +160,7 @@ class BilibiliClient:
         except (urllib.error.URLError, TimeoutError, json.JSONDecodeError):
             cached = load_json(cache_path, None)
             if use_cache and cached and time.time() - cached.get("fetched_at", 0) < 86400:
+                self.cache_hits.append(cache_identity)
                 return cached["payload"]
             raise
 
@@ -304,6 +306,10 @@ def collect_bilibili(pages, detail_limit, known_ids):
             entry["comments_error"] = str(exc)
         if index < len(new) - 1:
             time.sleep(2)
+    result["cache_hits"] = len(client.cache_hits)
+    if client.cache_hits:
+        result["status"] = "partial"
+        result["errors"].append(f"Used cached Bilibili search responses for {len(client.cache_hits)} requests")
     result["entries"] = ordered
     return result
 
