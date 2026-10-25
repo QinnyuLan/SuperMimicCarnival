@@ -2,7 +2,7 @@
 
 从 **2026-10-20** 起，持续汇总 [SuperMimic](https://supermimic.github.io/)（arXiv:2610.28480）的开源复现与改造。
 
-> 最近核查：2026-10-25 11:40（UTC+8） · 已确认完整训练实现：**39 个仓库**  
+> 最近核查：2026-10-25 14:40（UTC+8） · 已确认完整训练实现：**39 个仓库**  
 > Star 为本次核查快照，每 3 小时随增量检索刷新。
 
 ## 收录口径
@@ -25,13 +25,13 @@
 | 仓库 | ⭐ | 精简总结 | 主要训练任务 | 底座／来源 |
 |---|---:|---|---|---|
 | [HorizonRobotics/HoloMotion](https://github.com/HorizonRobotics/HoloMotion) | 733 | HoloMotion 内新增完整 SuperMimic 算法、配置、训练与评测文档 | 人形全身动作跟踪，MuJoCo Warp／Isaac PhysX | HoloMotion |
-| [zita-ch/supermimic_vibed](https://github.com/zita-ch/supermimic_vibed) | 477 | 早期高影响力独立复现，完整 WM＋BPTT＋critic | G1，40 条 LAFAN1 平地全身跟踪 | Isaac Lab 3 kit-less、Newton／MuJoCo Warp |
-| [CuboiLeo/SuperMimic-Reproduced](https://github.com/CuboiLeo/SuperMimic-Reproduced) | 202 | 从零实现数据、可微 FK、WM、想象训练、分布式与评测 | G1，LAFAN1＋BONES-SEED 全身跟踪 | mjlab／MuJoCo Warp |
+| [zita-ch/supermimic_vibed](https://github.com/zita-ch/supermimic_vibed) | 482 | 早期高影响力独立复现，完整 WM＋BPTT＋critic | G1，40 条 LAFAN1 平地全身跟踪 | Isaac Lab 3 kit-less、Newton／MuJoCo Warp |
+| [CuboiLeo/SuperMimic-Reproduced](https://github.com/CuboiLeo/SuperMimic-Reproduced) | 204 | 从零实现数据、可微 FK、WM、想象训练、分布式与评测 | G1，LAFAN1＋BONES-SEED 全身跟踪 | mjlab／MuJoCo Warp |
 | [Motphys/Uni-SuperMimic](https://github.com/Motphys/Uni-SuperMimic) | 113 | UniLab 工程化复现，支持三种仿真后端和 ROCm 路径 | G1，40 条 LAFAN1 全身跟踪 | UniLab；参考 supermimic_vibed |
-| [lzyang2000/morphmimic](https://github.com/lzyang2000/morphmimic) | 53 | 形态条件化 WM／策略共享，支持五点稀疏目标与部署 | G1／X2 Ultra／T2，BONES-SEED，多机器人跟踪 | 独立实现；mjlab |
+| [lzyang2000/morphmimic](https://github.com/lzyang2000/morphmimic) | 56 | 形态条件化 WM／策略共享，支持五点稀疏目标与部署 | G1／X2 Ultra／T2，BONES-SEED，多机器人跟踪 | 独立实现；mjlab |
 | [btx0424/rethinking-supermimic](https://github.com/btx0424/rethinking-supermimic) | 20 | 重思网络与训练实现，含多种 actor 配置和梯度检查 | G1，40 条 LAFAN1 跟踪 | mjlab |
 | [YanYuan98/Supermimic_mod](https://github.com/YanYuan98/Supermimic_mod) | 8 | 完整训练评测，并提供与 RGMT 的效果对比 | G1，40 条 LAFAN1 跟踪 | mjlab／MuJoCo Warp |
-| [Shimingyi/allmimic](https://github.com/Shimingyi/allmimic) | 6 | 强调可行性过滤及内容／演员／随机三类 held-out 划分 | G1，LAFAN1＋BONES-SEED 跟踪与泛化评测 | mjlab；参考 supermimic_vibe |
+| [Shimingyi/allmimic](https://github.com/Shimingyi/allmimic) | 7 | 强调可行性过滤及内容／演员／随机三类 held-out 划分 | G1，LAFAN1＋BONES-SEED 跟踪与泛化评测 | mjlab；参考 supermimic_vibe |
 | [kangzejian1896/supermimic-g1-reproduction](https://github.com/kangzejian1896/supermimic-g1-reproduction) | 5 | 增加验证动作、同协议对比和训练脚本 | G1，LAFAN1＋BONES-SEED 验证 | CuboiLeo/SuperMimic-Reproduced |
 | [humble02/supermimic_mjlab_vibed](https://github.com/humble02/supermimic_mjlab_vibed) | 4 | mjlab 移植，训练、续训、评估和离线服务器流程齐全 | G1，40 条 LAFAN1 跟踪 | zita-ch/supermimic_vibed |
 | [RaraAlu/Supermimic](https://github.com/RaraAlu/Supermimic) | 2 | 支持 CSV／HDF5、多卡分片、数据指纹与完整评估 | G1，LAFAN1 及大规模 HDF5 动作库 | zita-ch／mjlab |
@@ -49,11 +49,11 @@
 | 仓库 | ⭐ | 精简总结 | 主要训练任务 | 底座／来源 |
 |---|---:|---|---|---|
 | [project-instinct/InstinctMJ（supermimic 分支）](https://github.com/project-instinct/InstinctMJ/tree/supermimic) | 267 | 将机器人状态与深度编码视觉潜变量共同纳入 WM，在想象中训练原深度策略，无 PPO | G1 深度视觉地形跑酷：翻滚、跪膝爬 50 cm 台阶、跳坐、滚翻越过障碍 | InstinctMJ／InstinctLab、mjlab；适配 zita-ch |
-| [Zhengtianjin/go2-supermimic](https://github.com/Zhengtianjin/go2-supermimic) | 20 | 将 WM＋想象 rollout 用于追逐与闪避，含 LiDAR／高程输入 | Go2 平地、障碍、楼梯／坡面／粗糙地形 | mjlab；参考 go2_rl_gym |
+| [Zhengtianjin/go2-supermimic](https://github.com/Zhengtianjin/go2-supermimic) | 24 | 将 WM＋想象 rollout 用于追逐与闪避，含 LiDAR／高程输入 | Go2 平地、障碍、楼梯／坡面／粗糙地形 | mjlab；参考 go2_rl_gym |
 | [JackMin7/supermimic_whole_body_tracking](https://github.com/JackMin7/supermimic_whole_body_tracking) | 19 | 同任务 MBRL 与 PPO 对照，附逐 10 分钟训练数据 | G1 静态站立／全身控制 | BeyondMimic／SuperMimic |
 | [panhainan2020/SuperMimic-MuJoCo](https://github.com/panhainan2020/SuperMimic-MuJoCo) | 11 | 脱离 Isaac Lab，支持原生 MuJoCo／MJLab 与两种 G1 模型 | G1，LAFAN1＋100STYLE 分布外评测 | zita-ch／MJLab |
 | [Renforce-Dynamics/trackerlab-supermimic](https://github.com/Renforce-Dynamics/trackerlab-supermimic) | 8 | TrackerLab 数据到训练、评测、导出全链路 | G1 LAFAN1；Go2 trot 跟踪 | TrackerLab、IsaacLab／PhysX、zita-ch |
-| [Baojch/SuperMimic_Dyn](https://github.com/Baojch/SuperMimic_Dyn) | 8 | 面向高动态与低姿态动作，保留完整可复现训练记录 | G1 空翻、爬行、跌倒起身及通用跟踪 | CuboiLeo／mjlab |
+| [Baojch/SuperMimic_Dyn](https://github.com/Baojch/SuperMimic_Dyn) | 9 | 面向高动态与低姿态动作，保留完整可复现训练记录 | G1 空翻、爬行、跌倒起身及通用跟踪 | CuboiLeo／mjlab |
 | [tianshuwu/supermimic-retargeted](https://github.com/tianshuwu/supermimic-retargeted) | 6 | 多本体动作重定向与训练，支持 A3／X2／G1 | 多本体 LAFAN1／BONES 跟踪 | CuboiLeo／zita-ch |
 | [wenconggan/SuperMimic_e1](https://github.com/wenconggan/SuperMimic_e1) | 4 | E1 21DoF 适配，训练后可在原生 MuJoCo sim2sim | DroidUp E1，40 条 LAFAN1 跟踪 | Isaac Lab 3／Newton／MuJoCo Warp |
 | [OMEGA-i/SuperMimicKit](https://github.com/OMEGA-i/SuperMimicKit) | 3 | 多本体工具包，含重定向、训练、ONNX 和 WebGPU 演示 | G1／H2／A3，LaFAN 跟踪 | PyTorch／MuJoCo Warp；参考 zita-ch |
@@ -78,14 +78,15 @@
 | [yagami-light7/SuperMimic-codex](https://github.com/yagami-light7/SuperMimic-codex) | 当前为 M0 环境冒烟，README 明确等待后续训练实现。 |
 | [zzhanYoung/supermimic-lite](https://github.com/zzhanYoung/supermimic-lite) | 当前内容主要是 mjlab 上游框架，未核实到 SuperMimic WM 训练闭环。 |
 | [Tianao-Zhang/supermimic_dualhand](https://github.com/Tianao-Zhang/supermimic_dualhand) | 仓库当前为空（GitHub 返回 empty repository），无可核查的训练代码；下轮复查。 |
+| [Go-Youngster/supermimic-reproduce](https://github.com/Go-Youngster/supermimic-reproduce) | 仓库当前为空（无法解析默认分支），无可核查的训练代码；下轮复查。 |
 
 ## 社区平台检索记录
 
 社区内容的发布时间、任务类型和代码状态单独维护在 **[COMMUNITY_TASKS.md](COMMUNITY_TASKS.md)**。
 
 - **GitHub**：组合检索 `supermimic`、`super mimic`、arXiv 编号及底座关键词，覆盖仓库名称、简介、README、文档和代码；对候选仓库显式枚举分支，检查 `supermimic` 等非默认分支的说明文件与训练实现。
-- **Bilibili**：已利用登录态网页按时间整理深度图地形、HOI 搬箱、E1、灵龙 2.0、RGMT、Oli、Mac Studio、闪身步和高难动作等任务，并检查 `superminic` 拼写变体；只把能回溯到公开仓库且通过训练代码核查的项目并入主表。公开抓取接口返回 412 时改用已登录页面读取，不绕过反爬。2026-10-25 11:40 轮自动化会话的内置浏览器控制工具不可用，改用公开网页结果，未见 10-24 22:00 之后的新可核验条目；登录态检索留待下轮重试。
-- **小红书**：已利用用户登录态检索，通过页面状态／DOM 提取正文和时间，并核查重点笔记的公开可访问评论；本轮新增 15 条社区记录，M5 等条目由作者评论或正文定位到已核实仓库。文档只保存不含访问令牌的规范链接；登录失效时记录限制并留待下轮重试。2026-10-25 11:40 轮内置浏览器控制工具不可用，公开网页无新条目，既有条目保持不变。
+- **Bilibili**：已利用登录态网页按时间整理深度图地形、HOI 搬箱、E1、灵龙 2.0、RGMT、Oli、Mac Studio、闪身步和高难动作等任务，并检查 `superminic` 拼写变体；只把能回溯到公开仓库且通过训练代码核查的项目并入主表。公开抓取接口返回 412 时改用已登录页面读取，不绕过反爬。2026-10-25 11:40 与 14:40 轮自动化会话的内置浏览器控制工具均不可用，改用公开网页结果；公开检索发现一条疑似 Motphys 新视频线索（单卡 40 分钟速通 LAFAN），但无法取得 BV 号与发布时间，未列入时间线，待登录态核查；其余未见 10-24 22:00 之后的新可核验条目。
+- **小红书**：已利用用户登录态检索，通过页面状态／DOM 提取正文和时间，并核查重点笔记的公开可访问评论；本轮新增 15 条社区记录，M5 等条目由作者评论或正文定位到已核实仓库。文档只保存不含访问令牌的规范链接；登录失效时记录限制并留待下轮重试。2026-10-25 11:40 与 14:40 轮内置浏览器控制工具均不可用，公开网页无新条目，既有条目保持不变，登录态检索留待下轮重试。
 - 平台简介及公开可访问评论中的 homepage／GitHub 仅作为候选线索，不作为“训练完整”的证据；HOI、地形、跑酷、各种 humanoid task 和其他机器人任务均纳入检索范围。
 
 ## 更新约定
