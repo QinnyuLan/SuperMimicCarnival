@@ -1,6 +1,6 @@
 # SuperMimic 社区新任务时间线
 
-汇总 **2026-10-20** 以来 Bilibili、小红书上与 SuperMimic 有关的新任务、新本体和训练方式改造，按内容公开发布时间升序排列。时间为 **UTC+8**；最近核查：**2026-10-25 23:45**。
+汇总 **2026-10-20** 以来 Bilibili、小红书上与 SuperMimic 有关的新任务、新本体和训练方式改造，按内容公开发布时间升序排列。时间为 **UTC+8**；最近核查：**2026-10-26 02:45**。
 
 ## 状态口径
 
@@ -57,11 +57,14 @@
 | 2026-10-25 13:51:43 | Bilibili · [supermimic-go2-locomotion](https://www.bilibili.com/video/BV1CPHV6YEfh/) | Go2 四足 locomotion | **任务展示**。简介只给论文主页，未给仓库；评论询问训练时长与数据来源，未获作者答复。 |
 | 2026-10-25 17:07:03 | Bilibili · [SuperMimic在2D场景复现，消费级显卡15分钟就可以](https://www.bilibili.com/video/BV1DQH56JEqi/) | 自研 2D 引擎 FlatWorld 上的 SuperMimic 复现：共享刚体 WM＋短想象 BPTT 策略改进；作者称 5060 消费级显卡 15 min 训练完成 | **训练已核实**。简介与作者评论均直链 [FlatWorld](https://github.com/swaggyliu/FlatWorld)，已静态核查 `supermimic2d` 训练闭环（train.py、WM／策略／critic、参考动作烘焙管线）并收录主表；训练时长为作者自报。 |
 | 2026-10-25 17:42:10 | Bilibili · [震惊瘫坐！supermimic感知行走1小时出炉！](https://www.bilibili.com/video/BV1NPHL6GEat/) | 感知行走；作者称 Pro 5000 单卡 4 万轮 1 h 训出，在 zita-ch 复现库上经 Codex 自行修改，未给 locomotion reward 或 style reward | **任务展示**。简介未给改造仓库；评论追问奖励构成未获作者技术答复；训练时长为作者自报。 |
+| 2026-10-25 23:53:00 | Bilibili · [Day 54 SuperMimic Intro](https://www.bilibili.com/video/BV13xnU6GEVG/) | 世界模型机器人方向学习日志（Day 54） | **任务展示**。无仓库链接，属学习记录。 |
+| 2026-10-26 00:49:40 | Bilibili · [unisupermimic 复现](https://www.bilibili.com/video/BV17gnU6pECw/) | 标题指向 Uni-SuperMimic 的复现展示 | **任务展示**。简介为“-”，未给仓库；仅标题相关，不绑定主表 Uni-SuperMimic。 |
+| 2026-10-26 02:34:01 | Bilibili · [SuperMimic-Learning_A_Differentiable_World_Model](https://www.bilibili.com/video/BV1mLnQ61E7d/) | 论文方法讲解（可微世界模型） | **任务展示**。无简介与仓库链接，属论文讲解系列。 |
 
 ## 检索与访问记录
 
-- **Bilibili**：使用 `community_collect.py` 经公开 HTTP API 无浏览器采集（未调用 InAppBrowser），检索 SuperMimic／super mimic／superminic，按发布时间检查前 3 页，抓取新候选详情与公开评论；接口失败时不得把缓存当实时结果。15:35 轮实时采集成功：28 条候选、16 条新条目进入时间线，引用评论的条目 comments_status 均为 ok；14:40 轮遗留的 Motphys“单卡 40 分钟速通 LAFAN”线索核实为 BV1AQnn6DEBE（10-23 00:06），简介直链 Uni-SuperMimic，标“训练已核实”。17:45 轮实时采集成功（cache_hits=0）：29 条候选、1 条新条目（SuperMimic 2D 复现，BV1DQH56JEqi，10-25 17:07），简介与作者评论直链 FlatWorld 并收录主表。20:45 轮实时采集成功（cache_hits=0）：29 条候选、0 条新条目，时间线无变化。23:45 轮实时采集成功（cache_hits=0）：30 条候选、1 条新条目（感知行走，BV1NPHL6GEat，10-25 17:42），未给仓库，标“任务展示”。
-- **小红书**：2026-10-25 15:35、17:45、20:45 与 23:45 轮脚本采集状态均为 **needs_auth**：本机 `.secrets/xiaohongshu_cookie.txt` 缺失（报错明确提示配置文件），小红书记为未检索成功，无新增条目，既有 15 条全部保留；请更新本机 Cookie 文件后下轮重试，不读取、不打印、不提交 Cookie，不绕过登录与访问控制。文档只保存不含访问令牌的规范笔记链接。
+- **Bilibili**：使用 `community_collect.py` 经公开 HTTP API 无浏览器采集（未调用 InAppBrowser），检索 SuperMimic／super mimic／superminic，按发布时间检查前 3 页，抓取新候选详情与公开评论；接口失败时不得把缓存当实时结果。15:35 轮实时采集成功：28 条候选、16 条新条目进入时间线，引用评论的条目 comments_status 均为 ok；14:40 轮遗留的 Motphys“单卡 40 分钟速通 LAFAN”线索核实为 BV1AQnn6DEBE（10-23 00:06），简介直链 Uni-SuperMimic，标“训练已核实”。17:45 轮实时采集成功（cache_hits=0）：29 条候选、1 条新条目（SuperMimic 2D 复现，BV1DQH56JEqi，10-25 17:07），简介与作者评论直链 FlatWorld 并收录主表。20:45 轮实时采集成功（cache_hits=0）：29 条候选、0 条新条目，时间线无变化。23:45 轮实时采集成功（cache_hits=0）：30 条候选、1 条新条目（感知行走，BV1NPHL6GEat，10-25 17:42），未给仓库，标“任务展示”。2026-10-26 02:45 轮实时采集成功（cache_hits=0）：31 条候选、3 条新条目（BV13xnU6GEVG 学习日志、BV17gnU6pECw 复现展示、BV1mLnQ61E7d 方法讲解），均未给仓库。
+- **小红书**：2026-10-25 15:35、17:45、20:45、23:45 与 2026-10-26 02:45 轮脚本采集状态均为 **needs_auth**：本机 `.secrets/xiaohongshu_cookie.txt` 缺失（报错明确提示配置文件），小红书记为未检索成功，无新增条目，既有 15 条全部保留；请更新本机 Cookie 文件后下轮重试，不读取、不打印、不提交 Cookie，不绕过登录与访问控制。文档只保存不含访问令牌的规范笔记链接。
 - 简介和评论中的仓库、主页只是候选线索；只有完成训练链路静态核查后才标“训练已核实”。登录失效或评论不可访问时记录限制并留待下轮，不绕过访问控制。
 
 ## 后续增量规则
