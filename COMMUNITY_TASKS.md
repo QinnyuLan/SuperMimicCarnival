@@ -1,6 +1,6 @@
 # SuperMimic 社区新任务时间线
 
-汇总 **2026-10-20** 以来 Bilibili、小红书上与 SuperMimic 有关的新任务、新本体和训练方式改造，按内容公开发布时间升序排列。时间为 **UTC+8**；最近核查：**2026-10-26 08:45**。
+汇总 **2026-10-20** 以来 Bilibili、小红书上与 SuperMimic 有关的新任务、新本体和训练方式改造，按内容公开发布时间升序排列。时间为 **UTC+8**；最近核查：**2026-10-26 11:45**。
 
 ## 状态口径
 
@@ -61,11 +61,12 @@
 | 2026-10-25 23:53:00 | Bilibili · [Day 54 SuperMimic Intro](https://www.bilibili.com/video/BV13xnU6GEVG/) | 世界模型机器人方向学习日志（Day 54） | **任务展示**。无仓库链接，属学习记录。 |
 | 2026-10-26 00:49:40 | Bilibili · [unisupermimic 复现](https://www.bilibili.com/video/BV17gnU6pECw/) | 标题指向 Uni-SuperMimic 的复现展示 | **任务展示**。简介为“-”，未给仓库；仅标题相关，不绑定主表 Uni-SuperMimic。 |
 | 2026-10-26 02:34:01 | Bilibili · [SuperMimic-Learning_A_Differentiable_World_Model](https://www.bilibili.com/video/BV1mLnQ61E7d/) | 论文方法讲解（可微世界模型） | **任务展示**。无简介与仓库链接，属论文讲解系列。 |
+| 2026-10-26 10:00:49 | Bilibili · [【锟酱】一张显卡几个小时，凭什么训出人形机器人全身动作跟踪器？\| SuperMimic 原理讲解](https://www.bilibili.com/video/BV1TEnQ6yEYi/) | 论文方法讲解（可微世界模型＋想象 BPTT＋critic） | **任务展示**。原理讲解视频，简介未给仓库或主页；公开评论 comments_status 为 ok，未见仓库链接。 |
 
 ## 检索与访问记录
 
-- **Bilibili**：使用 `community_collect.py` 经公开 HTTP API 无浏览器采集（未调用 InAppBrowser），检索 SuperMimic／super mimic／superminic，按发布时间检查前 3 页，抓取新候选详情与公开评论；接口失败时不得把缓存当实时结果。15:35 轮实时采集成功：28 条候选、16 条新条目进入时间线，引用评论的条目 comments_status 均为 ok；14:40 轮遗留的 Motphys“单卡 40 分钟速通 LAFAN”线索核实为 BV1AQnn6DEBE（10-23 00:06），简介直链 Uni-SuperMimic，标“训练已核实”。17:45 轮实时采集成功（cache_hits=0）：29 条候选、1 条新条目（SuperMimic 2D 复现，BV1DQH56JEqi，10-25 17:07），简介与作者评论直链 FlatWorld 并收录主表。20:45 轮实时采集成功（cache_hits=0）：29 条候选、0 条新条目，时间线无变化。23:45 轮实时采集成功（cache_hits=0）：30 条候选、1 条新条目（感知行走，BV1NPHL6GEat，10-25 17:42），未给仓库，标“任务展示”。2026-10-26 02:45 轮实时采集成功（cache_hits=0）：31 条候选、3 条新条目（BV13xnU6GEVG 学习日志、BV17gnU6pECw 复现展示、BV1mLnQ61E7d 方法讲解），均未给仓库。2026-10-26 05:45 轮实时采集成功（cache_hits=0）：34 条候选、1 条新条目（BV1U5nS6zETw，10-25 21:35，未指明仓库）。2026-10-26 05:50 轮实时采集（cache_hits=0）但覆盖面收窄：仅返回 14 条候选且全部为 10-22／10-23 早期内容、0 条新条目，时间线无变化，下轮复核覆盖面。2026-10-26 08:45 轮实时采集成功（cache_hits=0，覆盖面恢复至 34 条候选、0 条新条目）。
-- **小红书**：2026-10-25 15:35 起连续各轮（含 2026-10-26 08:45）脚本采集状态均为 **needs_auth**：本机 `.secrets/xiaohongshu_cookie.txt` 缺失（报错明确提示配置文件），小红书记为未检索成功，无新增条目，既有 15 条全部保留；请更新本机 Cookie 文件后下轮重试，不读取、不打印、不提交 Cookie，不绕过登录与访问控制。文档只保存不含访问令牌的规范笔记链接。
+- **Bilibili**：使用 `community_collect.py` 经公开 HTTP API 无浏览器采集（未调用 InAppBrowser），检索 SuperMimic／super mimic／superminic，按发布时间检查前 3 页，抓取新候选详情与公开评论；接口失败时不得把缓存当实时结果。15:35 轮实时采集成功：28 条候选、16 条新条目进入时间线，引用评论的条目 comments_status 均为 ok；14:40 轮遗留的 Motphys“单卡 40 分钟速通 LAFAN”线索核实为 BV1AQnn6DEBE（10-23 00:06），简介直链 Uni-SuperMimic，标“训练已核实”。17:45 轮实时采集成功（cache_hits=0）：29 条候选、1 条新条目（SuperMimic 2D 复现，BV1DQH56JEqi，10-25 17:07），简介与作者评论直链 FlatWorld 并收录主表。20:45 轮实时采集成功（cache_hits=0）：29 条候选、0 条新条目，时间线无变化。23:45 轮实时采集成功（cache_hits=0）：30 条候选、1 条新条目（感知行走，BV1NPHL6GEat，10-25 17:42），未给仓库，标“任务展示”。2026-10-26 02:45 轮实时采集成功（cache_hits=0）：31 条候选、3 条新条目（BV13xnU6GEVG 学习日志、BV17gnU6pECw 复现展示、BV1mLnQ61E7d 方法讲解），均未给仓库。2026-10-26 05:45 轮实时采集成功（cache_hits=0）：34 条候选、1 条新条目（BV1U5nS6zETw，10-25 21:35，未指明仓库）。2026-10-26 05:50 轮实时采集（cache_hits=0）但覆盖面收窄：仅返回 14 条候选且全部为 10-22／10-23 早期内容、0 条新条目，时间线无变化，下轮复核覆盖面。2026-10-26 08:45 轮实时采集成功（cache_hits=0，覆盖面恢复至 34 条候选、0 条新条目）。2026-10-26 11:45 轮实时采集成功（cache_hits=0）：34 条候选、1 条新条目（BV1TEnQ6yEYi，10-26 10:00，SuperMimic 原理讲解，未给仓库）。
+- **小红书**：2026-10-25 15:35 起连续各轮（含 2026-10-26 11:45）脚本采集状态均为 **needs_auth**：本机 `.secrets/xiaohongshu_cookie.txt` 缺失（报错明确提示配置文件），小红书记为未检索成功，无新增条目，既有 15 条全部保留；请更新本机 Cookie 文件后下轮重试，不读取、不打印、不提交 Cookie，不绕过登录与访问控制。文档只保存不含访问令牌的规范笔记链接。
 - 简介和评论中的仓库、主页只是候选线索；只有完成训练链路静态核查后才标“训练已核实”。登录失效或评论不可访问时记录限制并留待下轮，不绕过访问控制。
 
 ## 后续增量规则
