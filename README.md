@@ -2,7 +2,7 @@
 
 从 **2026-10-20** 起，持续汇总 [SuperMimic](https://supermimic.github.io/)（arXiv:2610.28480）的开源复现与改造。
 
-> 最近核查：2026-10-27 23:45（UTC+8） · 已确认完整训练实现：**51 个仓库**  
+> 最近核查：2026-10-28 02:45（UTC+8） · 已确认完整训练实现：**51 个仓库**  
 > Star 为本次核查快照，每 3 小时随增量检索刷新。
 
 ## 收录口径
@@ -25,8 +25,8 @@
 | 仓库 | ⭐ | 精简总结 | 主要训练任务 | 底座／来源 |
 |---|---:|---|---|---|
 | [HorizonRobotics/HoloMotion](https://github.com/HorizonRobotics/HoloMotion) | 743 | HoloMotion 内新增完整 SuperMimic 算法、配置、训练与评测文档 | 人形全身动作跟踪，MuJoCo Warp／Isaac PhysX | HoloMotion |
-| [zita-ch/supermimic_vibed](https://github.com/zita-ch/supermimic_vibed) | 651 | 早期高影响力独立复现，完整 WM＋BPTT＋critic | G1，40 条 LAFAN1 平地全身跟踪 | Isaac Lab 3 kit-less、Newton／MuJoCo Warp |
-| [CuboiLeo/SuperMimic-Reproduced](https://github.com/CuboiLeo/SuperMimic-Reproduced) | 273 | 从零实现数据、可微 FK、WM、想象训练、分布式与评测 | G1，LAFAN1＋BONES-SEED 全身跟踪 | mjlab／MuJoCo Warp |
+| [zita-ch/supermimic_vibed](https://github.com/zita-ch/supermimic_vibed) | 653 | 早期高影响力独立复现，完整 WM＋BPTT＋critic | G1，40 条 LAFAN1 平地全身跟踪 | Isaac Lab 3 kit-less、Newton／MuJoCo Warp |
+| [CuboiLeo/SuperMimic-Reproduced](https://github.com/CuboiLeo/SuperMimic-Reproduced) | 274 | 从零实现数据、可微 FK、WM、想象训练、分布式与评测 | G1，LAFAN1＋BONES-SEED 全身跟踪 | mjlab／MuJoCo Warp |
 | [Motphys/Uni-SuperMimic](https://github.com/Motphys/Uni-SuperMimic) | 168 | UniLab 工程化复现，支持三种仿真后端和 ROCm 路径 | G1，40 条 LAFAN1 全身跟踪 | UniLab；参考 supermimic_vibed |
 | [lzyang2000/morphmimic](https://github.com/lzyang2000/morphmimic) | 139 | 形态条件化 WM／策略共享，支持五点稀疏目标与部署 | G1／X2 Ultra／T2，BONES-SEED，多机器人跟踪 | 独立实现；mjlab |
 | [btx0424/rethinking-supermimic](https://github.com/btx0424/rethinking-supermimic) | 24 | 重思网络与训练实现，含多种 actor 配置和梯度检查 | G1，40 条 LAFAN1 跟踪 | mjlab |
@@ -51,7 +51,7 @@
 
 | 仓库 | ⭐ | 精简总结 | 主要训练任务 | 底座／来源 |
 |---|---:|---|---|---|
-| [project-instinct/InstinctMJ（supermimic 分支）](https://github.com/project-instinct/InstinctMJ/tree/supermimic) | 288 | 将机器人状态与深度编码视觉潜变量共同纳入 WM，在想象中训练原深度策略，无 PPO；10-25 更新新增目标点跑酷任务与公开数据／权重 release | G1 深度视觉地形跑酷：翻滚、跪膝爬 50 cm 台阶、跳坐、滚翻越过障碍；目标点跑酷（AMP 风格奖励，地形课程约 6 级） | InstinctMJ／InstinctLab、mjlab；适配 zita-ch |
+| [project-instinct/InstinctMJ（supermimic 分支）](https://github.com/project-instinct/InstinctMJ/tree/supermimic) | 289 | 将机器人状态与深度编码视觉潜变量共同纳入 WM，在想象中训练原深度策略，无 PPO；10-25 更新新增目标点跑酷任务与公开数据／权重 release | G1 深度视觉地形跑酷：翻滚、跪膝爬 50 cm 台阶、跳坐、滚翻越过障碍；目标点跑酷（AMP 风格奖励，地形课程约 6 级） | InstinctMJ／InstinctLab、mjlab；适配 zita-ch |
 | [Zhengtianjin/go2-supermimic](https://github.com/Zhengtianjin/go2-supermimic) | 59 | 将 WM＋想象 rollout 用于追逐与闪避，含 LiDAR／高程输入 | Go2 平地、障碍、楼梯／坡面／粗糙地形 | mjlab；参考 go2_rl_gym |
 | [swaggyliu/FlatWorld（supermimic2d）](https://github.com/swaggyliu/FlatWorld) | 39 | 自研 2D 引擎上的 SuperMimic 完整复现：共享刚体 WM＋BPTT＋critic 训练闭环、参考动作烘焙与渲染导出 | 2D 十杆人形（8 驱动关节），LAFAN-like 动作库（走／跑／冲刺／舞蹈／跳／蹲／格斗／跌倒起身） | FlatWorld（Warp 2D 物理引擎）；SuperMimic 思路复刻 |
 | [JackMin7/supermimic_whole_body_tracking](https://github.com/JackMin7/supermimic_whole_body_tracking) | 19 | 同任务 MBRL 与 PPO 对照，附逐 10 分钟训练数据 | G1 静态站立／全身控制 | BeyondMimic／SuperMimic |
@@ -76,8 +76,8 @@
 | [shangchaohu718/supermimic-pera](https://github.com/shangchaohu718/supermimic-pera) | 0 | 从跟踪扩展到交互，含独立滑板技能训练与残差原型 | G1 跟踪、滑板；楼梯／搬箱仍在研发 | Motphys/Uni-SuperMimic |
 | [Mark054/SuperMimic_TienKung](https://github.com/Mark054/SuperMimic_TienKung) | 0 | 天工 3.0 独立适配，附模型、数据、转换和多卡训练 | 天工 3.0 全身跟踪 | mjlab；GMR 重定向 |
 | [sxh-kk/SuperMimic_Recurrence](https://github.com/sxh-kk/SuperMimic_Recurrence) | 0 | RTX 4090／CUDA 12 适配，并探索 Ollie／滑板路线 | G1 LAFAN1／BONES-SEED；Ollie 实验 | CuboiLeo／mjlab |
-| [emoPointer/supermimic_manipulation](https://github.com/emoPointer/supermimic_manipulation) | 18 | 将 SuperMimic 世界模型策略优化迁移到状态式机器人操作：OmniReset 式重置分布、仅预测物理状态的 WM、解析奖励＋可微成功测试，附 PPO 对照与三套任务配置 | ARX5 机械臂；lemon 放盘／box_in_bin 装箱／mug_hang 挂杯三项操作任务（HOI／移动操作类） | mjlab（MuJoCo Warp）＋OmniReset；SuperMimic（arXiv:2610.28480）方法迁移 |
-| [kaibohex/muscle-supermimic](https://github.com/kaibohex/muscle-supermimic) | 15 | 将 SuperMimic 迁移到肌肉驱动人形：可微 Hill 肌肉／腱复刻、单一 MDP 同时服务仿真与想象 rollout、双本体 KIT 数据重定向 | MS-Human-700（700 肌）／MyoFullBody（354 肌），MuscleMimic KIT 972 条全身跟踪 | mjlab；MuscleMimic（2026-10-26 新建） |
+| [emoPointer/supermimic_manipulation](https://github.com/emoPointer/supermimic_manipulation) | 20 | 将 SuperMimic 世界模型策略优化迁移到状态式机器人操作：OmniReset 式重置分布、仅预测物理状态的 WM、解析奖励＋可微成功测试，附 PPO 对照与三套任务配置 | ARX5 机械臂；lemon 放盘／box_in_bin 装箱／mug_hang 挂杯三项操作任务（HOI／移动操作类） | mjlab（MuJoCo Warp）＋OmniReset；SuperMimic（arXiv:2610.28480）方法迁移 |
+| [kaibohex/muscle-supermimic](https://github.com/kaibohex/muscle-supermimic) | 17 | 将 SuperMimic 迁移到肌肉驱动人形：可微 Hill 肌肉／腱复刻、单一 MDP 同时服务仿真与想象 rollout、双本体 KIT 数据重定向 | MS-Human-700（700 肌）／MyoFullBody（354 肌），MuscleMimic KIT 972 条全身跟踪 | mjlab；MuscleMimic（2026-10-26 新建） |
 | [JzKosann/supermimic-isaaclab-h1_2](https://github.com/JzKosann/supermimic-isaaclab-h1_2) | 3 | Isaac Lab 非官方复现：WM＋BPTT 训练器、可微 URDF FK 解析头、多动作库与 return-based reset、Appendix-F 评测与逐项目标一致性检查 | Unitree H1-2（27 DoF，去手），全身动作跟踪 | Isaac Lab；论文＋两份公开 G1 复现底座（2026-10-27 新建） |
 | [JonnyDing/supermimic_AMP（supermimic 分支）](https://github.com/JonnyDing/supermimic_AMP/tree/supermimic) | 8 | 在 AMP 风格化 locomotion 工程中迁入 SuperMimic 链路：真实采集→WM 多步拟合→想象 rollout／BPTT→critic，含动作有效性防护与逐项目标诊断；`supermimic` 非默认分支实现 | G1 AMP-Flat 风格化平地运动（速度控制＋AMP 判别器＋跌倒恢复保留，Rough 待做）；原 AMP-PPO 为对照 | mjlab 1.2；AMP 底座（2026-10-26 起，分支持续更新） |
 
@@ -91,8 +91,8 @@
 | [zzhanYoung/supermimic-lite](https://github.com/zzhanYoung/supermimic-lite) | 当前内容主要是 mjlab 上游框架，未核实到 SuperMimic WM 训练闭环。 |
 | [Tianao-Zhang/supermimic_dualhand](https://github.com/Tianao-Zhang/supermimic_dualhand) | 仓库当前为空（GitHub 返回 empty repository），无可核查的训练代码；下轮复查。 |
 | [yangkunpeng-coder/supermimic_reproduce](https://github.com/yangkunpeng-coder/supermimic_reproduce) | 仓库当前仅有 LICENSE，无任何训练代码；下轮复查。 |
-| [Noetix-Research-Lab/Supermimic](https://github.com/Noetix-Research-Lab/Supermimic) | 原主表条目；2026-10-27 20:45 起公开 API 返回 404／搜索不可见（可能已删除或转私有），无法复核训练代码，移出主表；10-27 23:45 复查仍 404；如下轮恢复可重新核查。 |
-| [BlackOtters/supermimicA3](https://github.com/BlackOtters/supermimicA3) | 原主表条目；核查时仓库返回 404（可能已删除或转私有），无法复核训练代码，移出主表；2026-10-27 23:45 复查仍 404（已连续 11 轮），维持暂不收录。 |
+| [Noetix-Research-Lab/Supermimic](https://github.com/Noetix-Research-Lab/Supermimic) | 原主表条目；2026-10-27 20:45 起公开 API 返回 404／搜索不可见（可能已删除或转私有），无法复核训练代码，移出主表；10-27 23:45 与 10-28 02:45 复查均仍 404；如下轮恢复可重新核查。 |
+| [BlackOtters/supermimicA3](https://github.com/BlackOtters/supermimicA3) | 原主表条目；核查时仓库返回 404（可能已删除或转私有），无法复核训练代码，移出主表；2026-10-28 02:45 复查仍 404（已连续 12 轮），维持暂不收录。 |
 | [Green-Fr0g/supermimic](https://github.com/Green-Fr0g/supermimic) | 10-26 新增工程骨架（Isaac Lab 3.0 任务包＋vendored rsl_rl PPO 库＋数据转换脚本），注册任务仍为 Cartpole 占位；2026-10-27 08:45 复查有推送更新，仍未核实到 SuperMimic WM／BPTT 训练闭环。 |
 | [huangkiki/awesome-supermimic](https://github.com/huangkiki/awesome-supermimic) | SuperMimic 资源合集（实现／演示／资料列表），本身无训练代码。 |
 | [DiaoOrg/awesome-supermimic](https://github.com/DiaoOrg/awesome-supermimic) | SuperMimic 资源合集（与 huangkiki 列表同类的实现／演示／资料列表），本身无训练代码。 |
@@ -102,8 +102,8 @@
 社区内容的发布时间、任务类型和代码状态单独维护在 **[COMMUNITY_TASKS.md](COMMUNITY_TASKS.md)**。
 
 - **GitHub**：组合检索 `supermimic`、`super mimic`、arXiv 编号及底座关键词，覆盖仓库名称、简介、README、文档和代码；对候选仓库显式枚举分支，检查 `supermimic` 等非默认分支的说明文件与训练实现。
-- **Bilibili**：2026-10-25 15:35 轮起改用 `community_collect.py` 经公开 HTTP API 采集（检索 SuperMimic／super mimic／superminic，按发布时间前 3 页，含候选详情与公开评论，评论状态非 ok 不声称已核查）。15:35 轮实时采集成功（28 条候选、16 条新条目），Motphys 官方“单卡 40 分钟速通 LAFAN”视频经简介直链 Uni-SuperMimic 核实并入时间线；17:45 轮实时采集成功（29 条候选、1 条新条目），SuperMimic 2D 复现视频（BV1DQH56JEqi）经简介与作者评论直链 FlatWorld，静态核查 `supermimic2d` 训练闭环后收录主表；20:45 轮实时采集成功（29 条候选、0 条新条目，无缓存依赖），时间线无变化；23:45 轮实时采集成功（30 条候选、1 条新条目：感知行走 1 小时出炉，BV1NPHL6GEat，作者称在 zita-ch 复现库上经 Codex 修改、无 locomotion／style reward，未给仓库，标“任务展示”）；2026-10-26 02:45 轮实时采集成功（31 条候选、3 条新条目：Day 54 学习日志、unisupermimic 复现展示、论文方法讲解各 1 条，均未给仓库，标“任务展示”）；05:45 轮实时采集成功（34 条候选、1 条新条目：5070Ti 跑通 mjlab 复现 12000 轮，BV1U5nS6zETw，未指明仓库，标“任务展示”）；05:50 轮实时采集（cache_hits=0）但覆盖面收窄：仅返回 14 条候选且全部为 10-22／10-23 早期内容、0 条新条目，时间线无变化，下轮复核覆盖面；08:45 轮实时采集成功（cache_hits=0，覆盖面恢复）：34 条候选、0 条新条目；11:45 轮实时采集成功（cache_hits=0）：34 条候选、1 条新条目（SuperMimic 原理讲解 BV1TEnQ6yEYi，10-26 10:00，未给仓库，标“任务展示”）；14:45 轮实时采集成功（cache_hits=0）：35 条候选、0 条新条目；17:45 轮实时采集成功（cache_hits=0）：35 条候选、0 条新条目；23:45 轮实时采集成功（cache_hits=0）：37 条候选、2 条新条目（BV1ZSnU6REij 太空步微调、BV1EPnZ6EE9b 闪身步，均未给仓库，标“任务展示”）；2026-10-27 02:45 轮实时采集成功（cache_hits=0）：39 条候选、2 条新条目（BV1i4no6CEzs 闪身步 2.0、BV1f3HF6nE7A 方法讲解，均未给仓库）；05:45 轮实时采集（cache_hits=0）但覆盖面收窄：仅返回 19 条候选、0 条新条目，时间线无变化，下轮复核覆盖面；08:45 轮实时采集成功（cache_hits=0，覆盖面恢复）：39 条候选、0 条新条目，时间线无变化；14:45 轮实时采集成功（cache_hits=0）：40 条候选、1 条新条目（BV1Ptn96jEww Codex 辅助复现展示，10-26 13:11，未给仓库，标“任务展示”）；17:45 轮实时采集成功（cache_hits=0）：42 条候选、2 条新条目（BV1haxM6CEGm 轮腿 RM 机器人 WM＋想象 BPTT 展示，10-27 14:32，自报指标未独立验证；BV1CVno6pEQ3 复现展示，10-27 17:00；均未给仓库，标“任务展示”）。；20:45 轮实时采集（cache_hits=0）但覆盖面收窄：仅返回 23 条候选、1 条新条目（BV1drxT6mEBw 四足“狗子”复现展示，10-27 18:17，未给仓库，标“任务展示”），下轮复核覆盖面。；23:45 轮实时采集成功（cache_hits=0，覆盖面恢复）：46 条候选、3 条新条目（BV1Tsxu6MEyr go2w 轮足初尝试，10-27 21:32；BV1zzxu6dEbC OpenArm 双臂模仿，10-27 21:40；BV1FBxu6bE3G 论文讲解，10-27 21:59；均未给仓库，标“任务展示”）。此前登录态网页轮次已整理深度图地形、HOI 搬箱、E1、灵龙 2.0、RGMT、Oli、Mac Studio、闪身步和高难动作等任务；只把能回溯到公开仓库且通过训练代码核查的项目并入主表，不绕过反爬。
-- **小红书**：已利用用户登录态检索，通过页面状态／DOM 提取正文和时间，并核查重点笔记的公开可访问评论；已有 15 条社区记录，M5 等条目由作者评论或正文定位到已核实仓库。2026-10-25 15:35 起连续各轮（含 2026-10-27 23:45）脚本采集状态均为 needs_auth（本机 `.secrets/xiaohongshu_cookie.txt` 缺失），均未新增小红书条目，既有的 15 条全部保留；需更新本机 Cookie 文件后下轮重试，不绕过登录与访问控制。文档只保存不含访问令牌的规范链接。
+- **Bilibili**：2026-10-25 15:35 轮起改用 `community_collect.py` 经公开 HTTP API 采集（检索 SuperMimic／super mimic／superminic，按发布时间前 3 页，含候选详情与公开评论，评论状态非 ok 不声称已核查）。15:35 轮实时采集成功（28 条候选、16 条新条目），Motphys 官方“单卡 40 分钟速通 LAFAN”视频经简介直链 Uni-SuperMimic 核实并入时间线；17:45 轮实时采集成功（29 条候选、1 条新条目），SuperMimic 2D 复现视频（BV1DQH56JEqi）经简介与作者评论直链 FlatWorld，静态核查 `supermimic2d` 训练闭环后收录主表；20:45 轮实时采集成功（29 条候选、0 条新条目，无缓存依赖），时间线无变化；23:45 轮实时采集成功（30 条候选、1 条新条目：感知行走 1 小时出炉，BV1NPHL6GEat，作者称在 zita-ch 复现库上经 Codex 修改、无 locomotion／style reward，未给仓库，标“任务展示”）；2026-10-26 02:45 轮实时采集成功（31 条候选、3 条新条目：Day 54 学习日志、unisupermimic 复现展示、论文方法讲解各 1 条，均未给仓库，标“任务展示”）；05:45 轮实时采集成功（34 条候选、1 条新条目：5070Ti 跑通 mjlab 复现 12000 轮，BV1U5nS6zETw，未指明仓库，标“任务展示”）；05:50 轮实时采集（cache_hits=0）但覆盖面收窄：仅返回 14 条候选且全部为 10-22／10-23 早期内容、0 条新条目，时间线无变化，下轮复核覆盖面；08:45 轮实时采集成功（cache_hits=0，覆盖面恢复）：34 条候选、0 条新条目；11:45 轮实时采集成功（cache_hits=0）：34 条候选、1 条新条目（SuperMimic 原理讲解 BV1TEnQ6yEYi，10-26 10:00，未给仓库，标“任务展示”）；14:45 轮实时采集成功（cache_hits=0）：35 条候选、0 条新条目；17:45 轮实时采集成功（cache_hits=0）：35 条候选、0 条新条目；23:45 轮实时采集成功（cache_hits=0）：37 条候选、2 条新条目（BV1ZSnU6REij 太空步微调、BV1EPnZ6EE9b 闪身步，均未给仓库，标“任务展示”）；2026-10-27 02:45 轮实时采集成功（cache_hits=0）：39 条候选、2 条新条目（BV1i4no6CEzs 闪身步 2.0、BV1f3HF6nE7A 方法讲解，均未给仓库）；05:45 轮实时采集（cache_hits=0）但覆盖面收窄：仅返回 19 条候选、0 条新条目，时间线无变化，下轮复核覆盖面；08:45 轮实时采集成功（cache_hits=0，覆盖面恢复）：39 条候选、0 条新条目，时间线无变化；14:45 轮实时采集成功（cache_hits=0）：40 条候选、1 条新条目（BV1Ptn96jEww Codex 辅助复现展示，10-26 13:11，未给仓库，标“任务展示”）；17:45 轮实时采集成功（cache_hits=0）：42 条候选、2 条新条目（BV1haxM6CEGm 轮腿 RM 机器人 WM＋想象 BPTT 展示，10-27 14:32，自报指标未独立验证；BV1CVno6pEQ3 复现展示，10-27 17:00；均未给仓库，标“任务展示”）。；20:45 轮实时采集（cache_hits=0）但覆盖面收窄：仅返回 23 条候选、1 条新条目（BV1drxT6mEBw 四足“狗子”复现展示，10-27 18:17，未给仓库，标“任务展示”），下轮复核覆盖面。；23:45 轮实时采集成功（cache_hits=0，覆盖面恢复）：46 条候选、3 条新条目（BV1Tsxu6MEyr go2w 轮足初尝试，10-27 21:32；BV1zzxu6dEbC OpenArm 双臂模仿，10-27 21:40；BV1FBxu6bE3G 论文讲解，10-27 21:59；均未给仓库，标“任务展示”）。；2026-10-28 02:45 轮实时采集（cache_hits=0）但覆盖面收窄：仅返回 22 条候选、0 条新条目，时间线无变化，下轮复核覆盖面。此前登录态网页轮次已整理深度图地形、HOI 搬箱、E1、灵龙 2.0、RGMT、Oli、Mac Studio、闪身步和高难动作等任务；只把能回溯到公开仓库且通过训练代码核查的项目并入主表，不绕过反爬。
+- **小红书**：已利用用户登录态检索，通过页面状态／DOM 提取正文和时间，并核查重点笔记的公开可访问评论；已有 15 条社区记录，M5 等条目由作者评论或正文定位到已核实仓库。2026-10-25 15:35 起连续各轮（含 2026-10-28 02:45）脚本采集状态均为 needs_auth（本机 `.secrets/xiaohongshu_cookie.txt` 缺失），均未新增小红书条目，既有的 15 条全部保留；需更新本机 Cookie 文件后下轮重试，不绕过登录与访问控制。文档只保存不含访问令牌的规范链接。
 - 平台简介及公开可访问评论中的 homepage／GitHub 仅作为候选线索，不作为“训练完整”的证据；HOI、地形、跑酷、各种 humanoid task 和其他机器人任务均纳入检索范围。
 
 ## 更新约定
